@@ -1,16 +1,22 @@
 {
   "name": "UnlockSure WP",
-  "dockerComposeFile": "docker-compose.yml",
+  "dockerComposeFile": ["docker-compose.yml"],
   "service": "wordpress",
-  "workspaceFolder": "/workspace",
+
+  // Force the repo to mount at /workspaces/<repo> (Codespaces & Dev Containers)
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
   "forwardPorts": [8080, 9090, 8025, 3306],
-  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  "postCreateCommand": "/bin/bash -lc '.devcontainer/postCreate.sh'",
   "remoteUser": "root",
+
   "customizations": {
     "vscode": {
       "settings": {
         "editor.formatOnSave": true,
-        "files.autoSave": "onFocusChange"
+        "files.autoSave": "onFocusChange",
+        "files.eol": "\n"
       },
       "extensions": [
         "ms-azuretools.vscode-docker",
