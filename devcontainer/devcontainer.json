@@ -1,0 +1,23 @@
+{
+  "name": "UnlockSure WP",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "wordpress",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8080, 9090, 8025, 3306],
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.autoSave": "onFocusChange"
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "xdebug.php-pack",
+        "bmewburn.vscode-intelephense-client",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
