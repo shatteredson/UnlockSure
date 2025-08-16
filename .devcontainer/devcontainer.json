@@ -2,15 +2,10 @@
   "name": "UnlockSure WP",
   "dockerComposeFile": ["docker-compose.yml"],
   "service": "wordpress",
-
-  // Force the repo to mount at /workspaces/<repo> (Codespaces & Dev Containers)
-  "mounts": ["source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached"],
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
   "forwardPorts": [8080, 9090, 8025, 3306],
   "postCreateCommand": "/bin/bash -lc '.devcontainer/postCreate.sh'",
   "remoteUser": "root",
-
   "customizations": {
     "vscode": {
       "settings": {

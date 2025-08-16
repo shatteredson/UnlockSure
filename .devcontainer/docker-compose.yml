@@ -33,7 +33,9 @@ services:
     ports:
       - "8080:80"
     volumes:
+      - ..:/workspace
       - wp_data:/var/www/html
+      - ../wp-content:/var/www/html/wp-content
 
   phpmyadmin:
     image: phpmyadmin:latest
