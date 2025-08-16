@@ -57,7 +57,7 @@ fi
 # Activate theme & IMEI plugin if present
 if wp theme is-installed unlocksure --allow-root; then
   wp theme activate unlocksure --allow-root || true
-fi
+figit commit -m "Re-add assets without LFS"
 wp plugin activate unlocksure-imei --allow-root || true
 
 # --- WooCommerce base pages & settings ---
