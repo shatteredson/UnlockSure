@@ -1,0 +1,39 @@
+/*
+Theme Name: UnlockSure IMEI Theme
+Author: UnlockSure
+Version: 0.1.0
+Text Domain: unlocksure-imei-theme
+*/
+
+/* Import IMEI checker styles for consistent branding */
+@import url("../plugins/unlocksure-imei/assets/unlocksure-imei.css");
+
+:root{
+  --us-blue:#0073E6;
+  --us-navy:#1A1A2E;
+  --us-gray:#F5F7FA;
+  --us-mgray:#A0A4A8;
+  --us-orange:#FF6F3C;
+  --us-error:#E74C3C;
+}
+
+body{
+  font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--us-gray);
+  color:#222;
+}
+
+a.button, button, .button{
+  border-radius:12px;
+  background-image: linear-gradient(180deg, var(--us-blue) 0%, var(--us-blue) 100%);
+  color:#fff; padding:12px 18px; text-decoration:none; display:inline-block;
+}
+a.button:hover, button:hover, .button:hover{
+  background-image: linear-gradient(180deg, var(--us-orange) 0%, var(--us-orange) 100%);
+}
+
+h1,h2,h3,.elementor-heading-title{
+  font-family:"Montserrat", "MontserratLocal", Arial, sans-serif;
+  font-weight:700;
+  color:var(--us-navy);
+}
